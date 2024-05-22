@@ -53,7 +53,6 @@ local plugins = {
       ensure_installed = {
         "black",
         "debugpy",
-        "mypy",
         "ruff-lsp",
         "pyright",
       },
