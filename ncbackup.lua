@@ -12,7 +12,7 @@ vim.opt.backup = true  -- Enable backup file creation
 vim.opt.writebackup = true  -- Keep a backup file while writing
 
 local ncbackup = {}
-ncbackup.directory = vim.g.ncbackup_directory or "~/.local/state/nvim/ncbackup"
+ncbackup.directory = vim.g.ncbackup_directory or (vim.fn.stdpath('data') .. "/ncbackup")
 ncbackup.purge = vim.g.ncbackup_purge or 10
 
 local function make_backup_dir(path)
