@@ -1,4 +1,4 @@
-# How to use
+# Install
 
 To install this for your neovim configuration
 
@@ -13,7 +13,26 @@ Then open up neovim and let everything install.
 Restart Neovim and install the treesitter syntax
 
 ```
-:TSInstall python dockerfile yaml strace
+nvim -c ':TSInstall python dockerfile yaml strace' -c 'qa!'
 ```
 
 Your recent backups are in: `~/.local/share/neovim/ncbackups`.
+
+# FAQ
+
+## Enable editing over scp:
+
+```sh
+# variant A
+nvim -u NORC scp://hostname//root/.bashrc
+
+# variant B
+sed -E 's/^(\s+)("netrw)/\1-- \2/' .config/nvim/lua/plugins/configs/lazy_nvim.lua
+nvim scp://hostname//root/.bashrc
+```
+
+## Diff
+
+```sh
+nvim -d FILE1 FILE2
+```
