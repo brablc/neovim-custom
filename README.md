@@ -13,8 +13,7 @@ Then open up neovim and let everything install.
 Restart Neovim and install the treesitter syntax
 
 ```
-:TSInstall python
-:TSInstall yaml
+:TSInstall python dockerfile yaml strace
 ```
 
 Your recent backups are in: `~/.local/share/neovim/ncbackups`.
