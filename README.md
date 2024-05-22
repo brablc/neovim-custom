@@ -16,4 +16,4 @@ Restart Neovim and install the treesitter syntax
 :TSInstall yaml
 ```
 
-Your recent backups are in: `~/.local/state/neovim/ncbackups`.
+Your recent backups are in: `~/.local/share/neovim/ncbackups`.
