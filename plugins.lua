@@ -65,5 +65,12 @@ local plugins = {
       require "custom.configs.lspconfig"
     end,
   },
+  {
+    "cappyzawa/trim.nvim",
+    config = function()
+      require("trim").setup({
+    })
+    end,
+  },
 }
 return plugins
