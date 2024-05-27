@@ -3,6 +3,8 @@ local null_ls = require('null-ls')
 
 local opts = {
   sources = {
+    -- null_ls.builtins.formatting.mypy,
+    -- null_ls.builtins.formatting.rull,
     null_ls.builtins.formatting.black,
     -- null_ls.builtins.diagnostics.mypy.with({
     --   extra_args = function()
