@@ -3,7 +3,11 @@ local M = {}
 M.dap = {
   plugin = true,
   n = {
-    ["<leader>db"] = {"<cmd> DapToggleBreakpoint <CR>"}
+    ["<leader>db"] = {"<cmd> DapToggleBreakpoint <CR>"},
+    ["<F5>"] = { "<cmd>DapContinue<CR>" },
+    ["<F10>"] = { "<cmd>DapStepOver<CR>" },
+    ["<F11>"] = { "<cmd>DapStepInto<CR>" },
+    ["<S-F11>"] = { "<cmd>DapStepOut<CR>" },
   }
 }
 
@@ -14,7 +18,21 @@ M.dap_python = {
       function()
         require('dap-python').test_method()
       end
-    }
+    },
+    ["<leader>dpa"] = {
+      function()
+        local args_str = vim.fn.input("Enter arguments (space-separated): ")
+        local args = vim.split(args_str, " ")
+
+        require("dap").run({
+            type = "python",
+            request = "launch",
+            name = "Launch file",
+            program = "${file}",
+            args = args, -- Pass user-provided arguments
+        })
+      end
+    },
   }
 }
 
